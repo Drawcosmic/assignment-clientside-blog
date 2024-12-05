@@ -1,0 +1,14 @@
+{{query}}
+    {{#if posts.length}}
+        {{query}}
+        {{#each posts}}
+                {{slug}} {{rubrik}}
+                    {{underrubrik}}
+                    {{#if tags.length}}
+                        {{#each tags}} {{this}} {{#unless @last}}, {{/unless}}{{/each}}
+                    {{/if}}
+                    {{score}}
+            {{/each}}
+    {{else}}
+        {{query}}
+    {{/if}}

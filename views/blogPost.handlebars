@@ -1,0 +1,14 @@
+{{title}}
+{{subtitle}}
+{{byline}}
+{{hero_image}}
+{{#each sections}}
+    {{> (prefixPartial type) . }}
+{{/each}}
+
+{{#each relatedPosts}}
+    {{slug}} {{title}}
+{{/each}}
+{{#each recentPosts}}
+    {{slug}} {{title}}
+{{/each}}

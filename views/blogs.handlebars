@@ -1,0 +1,12 @@
+{{#each groupedPosts}}
+    {{@key}} <!-- Year -->
+        {{#each this}}
+           {{@key}} <!-- Month -->
+                {{#each this}}
+                      {{day}} {{slug}} {{title}}
+                            {{#if tags.length}}
+                                {{#each tags}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}
+                            {{/if}}
+                    {{/each}}
+        {{/each}}
+{{/each}}
