@@ -1,19 +1,23 @@
-<main class="center">
-    <h1>{{title}}</h1>
-</main>
-<h2>{{subtitle}}</h2>
-<h3>
-    {{byline}}
-    {{hero_image}}
-</h3>
-{{#each sections}}
-{{> (prefixPartial type) . }}
-{{/each}}
+<div itemscope itemtype="http://schema.org/Blog">
+    <main class="center">
+        <h1 itemprop="name">{{title}}</h1>
+    </main>
+    <h2 href="subtitle.html" itemprop="url" itemscope itemtype="http://schema.org/Organization">{{subtitle}}</h2>
+    <h3 itemprop="text">
+        {{byline}}
+    </h3>
+    <h3>
+        {{hero_image}}
+    </h3>
+    {{#each sections}}
+    {{> (prefixPartial type) . }}
+    {{/each}}
 
-{{#each relatedPosts}}
-{{slug}} {{title}}
-{{/each}}
-{{#each recentPosts}}
-{{slug}} {{title}}
-{{/each}}
+    {{#each relatedPosts}}
+    {{slug}} {{title}}
+    {{/each}}
+    {{#each recentPosts}}
+    {{slug}} {{title}}
+    {{/each}}
+</div>
 </body>
