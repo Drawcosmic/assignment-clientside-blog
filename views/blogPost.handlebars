@@ -9,15 +9,21 @@
     <h3>
         {{hero_image}}
     </h3>
+
     {{#each sections}}
     {{> (prefixPartial type) . }}
     {{/each}}
 
+    <h4>Related posts</h4>
+    <ul>
     {{#each relatedPosts}}
-    {{slug}} {{title}}
+    <li><a href="https://www.w3schools.com/html/default.asp">{{slug}}</a> {{title}}</li>
     {{/each}}
+    </ul>
+    <h4>Recent posts</h4>
+    
     {{#each recentPosts}}
-    {{slug}} {{title}}
+    <li>{{slug}} {{title}}</li>
     {{/each}}
 </div>
 </body>

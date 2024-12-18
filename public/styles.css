@@ -1,16 +1,66 @@
-
+:root {
+    --primary-color: hsl(174, 40%, 33%);
+    --primary-color-dark: hsl(174, 40%, 16%);
+    --secondary-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 20%);
+    --background-color: hsl(0, 0%, 98%);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: hsl(0, 0%, 10%);
+        --text-color: hsl(0, 0%, 90%);
+        --primary-color: hsl(174, 40%, 75%);
+        --primary-color-dark: hsl(174, 40%, 50%);
+    }
+}
 .center {
     margin: auto;
     width: 50%;
     padding: 10px;
 }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 
-@media only screen and (max-width: 600px) {
+}
+
+a {
+    color: var(--primary-color);
+}
+
+    a:hover {
+        color: var(--primary-color-dark);
+    }
+
+body {
+    font-size: 1rem;
+    padding: 1rem;
+}
+/* Tablet-størrelse */
+
+@media (min-width: 600px) {
     body {
-        background-color: lightblue;
+        font-size: 1.2rem;
+        padding: 2rem;
+    }
+
+    header, footer {
+        padding: 2rem;
+    }
+}
+/* Desktop-størrelse */
+
+@media (min-width: 960px) {
+    body {
+        font-size: 1.4rem;
+        padding: 3rem;
+    }
+
+    header, footer {
+        padding: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
