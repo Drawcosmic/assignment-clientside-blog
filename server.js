@@ -29,6 +29,7 @@ app.use('/', require('./routes/post')); //including home / and /posts/:slug
 app.use('/posts', require('./routes/posts'));
 app.use('/search', require('./routes/search'));
 app.use('/images', require('./routes/images'));
+app.use('/about', require('./routes/about'));
 
 
 async function startServer() {

@@ -1,29 +1,56 @@
 <div itemscope itemtype="http://schema.org/Blog">
     <main class="center">
-        <h1 itemprop="name">{{title}}</h1>
+        <h1 itemprop="name">
+            {{title}}
+        </h1>
     </main>
-    <h2 href="subtitle.html" itemprop="url" itemscope itemtype="http://schema.org/Organization">{{subtitle}}</h2>
-    <h3 itemprop="text">
-        {{byline}}
-    </h3>
-    <h3>
-        {{hero_image}}
-    </h3>
+    <div class="paddingtext">
+        <h2 href="subtitle.html" itemprop="url" itemscope itemtype="http://schema.org/Organization">
+            {{subtitle}}
+        </h2>
+        <h3 itemprop="text">
+            {{byline}} <a href="https://chatgpt.com/" target="_blank"><img src="images\ChatGPT.png" width="30" alt="Chat Gbt Logo" /></a>
+        </h3>
+        <h3>
+            <a href="https://www.w3schools.com/tags/tag_input.asp">{{hero_image}}</a>
+        </h3>
+        {{#each sections}}
+        {{> (prefixPartial type) . }}
+        {{/each}}
 
-    {{#each sections}}
-    {{> (prefixPartial type) . }}
-    {{/each}}
+        <h4>Related posts</h4>
+        <ul>
+            {{#each relatedPosts}}
+            <li><a href="#" target="_blank">{{slug}}</a> {{title}}.</li>
+            {{/each}}
+        </ul>
+        <h4>Recent posts</h4>
+        <ul>
+            {{#each recentPosts}}
+            <li>{{slug}} {{title}}.</li>
+            {{/each}}
+        </ul>
+        <img src="images\favicon-96.96.png" alt="Box" />
+        <img src="images\favicon-96.96.png" alt="Box2" />
+        <img src="images\favicon-96.96.png" alt="Box3" />
+        <div class="box">
+            <div>
+                Pics Made By: ______
+            </div>
+        </div>
+    </div>
+    <div class="colorbox">
+        <p class="center">
+            <br/>
+           Her is a link to a Html Guide if ChatGpt Sometimes doesn't make senes <a href="https://www.w3schools.com/html/default.asp" target="_blank" >https://www.w3schools.com/html/default.asp</a>
+        </p>
 
-    <h4>Related posts</h4>
-    <ul>
-    {{#each relatedPosts}}
-    <li><a href="https://www.w3schools.com/html/default.asp">{{slug}}</a> {{title}}</li>
-    {{/each}}
-    </ul>
-    <h4>Recent posts</h4>
-    
-    {{#each recentPosts}}
-    <li>{{slug}} {{title}}</li>
-    {{/each}}
+    </div>
 </div>
+<footer class="footer">
+    <p>
+        Author: Oliver<br>
+        <a href="mailto:Oliver@edusde.com">Oliver@edusde.com</a>
+    </p>    
+</footer>
 </body>
